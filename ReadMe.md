@@ -1,5 +1,3 @@
-ReadMe.md
-
 Project Title: Python Automation Scripts
 
 Description: Scripts for task automation.
