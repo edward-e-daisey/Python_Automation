@@ -19,9 +19,9 @@ df['Price'] = df['Price'].astype(float)
 total_value_per_supplier = df.groupby('Supplier')[['Inventory', 'Price']].agg({'Inventory': 'sum', 'Price': 'mean'}).eval('Inventory * Price').round(2).to_dict()
 print(total_value_per_supplier)
 
-# IN PROGRESS - Find products with inventory less than 10
-# products_under_10_inv = df[df['Inventory'] < 10]['Product Number'].to_dict()
-# print(products_under_10_inv)
+# Purpose - Find products with inventory less than 10
+products_under_10_inv = df[df['Inventory'] < 10]['Product Number'].to_dict()
+print([int(value) for value in products_under_10_inv.values()])
 
 # Purpose - Calculate the total inventory price
 inventory_price = df['Inventory Price'] = df['Inventory'] * df['Price']
